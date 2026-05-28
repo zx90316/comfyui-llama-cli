@@ -1,34 +1,41 @@
 {
-    "name": "ComfyUI Llama.cpp Client Node",
-    "version": "1.0.0",
-    "description": "Comprehensive ComfyUI custom node for llama-server client with complete API support",
-    "author": "AI Assistant",
+    "name": "ComfyUI Llama.cpp CLI Node",
+    "version": "2.0.0",
+    "description": "ComfyUI custom nodes for llama.cpp CLI - direct subprocess control without running a server",
+    "author": "",
     "license": "MIT",
     "comfyui_version": ">=1.0.0",
     "dependencies": [
-        "requests>=2.25.1",
-        "pillow>=8.0.0"
+        "pillow>=8.0.0",
+        "numpy"
     ],
-    "supported_endpoints": [
-        "completion",
-        "chat_completions", 
-        "embeddings",
-        "tokenize",
-        "detokenize",
-        "apply_template",
-        "infill",
-        "reranking"
+    "supported_binaries": [
+        "llama-cli",
+        "llama-embedding"
+    ],
+    "nodes": [
+        "LlamaCliConfig",
+        "LlamaGenerate",
+        "LlamaChat",
+        "LlamaEmbedding",
+        "LlamaInfill",
+        "LlamaImageEncoder",
+        "LlamaProcessMonitor"
     ],
     "features": [
-        "Advanced sampling (DRY, XTC, Mirostat, Dynamic Temperature)",
+        "Direct subprocess control (no server required)",
+        "One-shot and keep-alive VRAM management modes",
+        "GGUF model dropdown via ComfyUI folder_paths",
+        "Full sampling parameter support (DRY, XTC, Mirostat, Dynamic Temperature)",
         "Grammar and JSON Schema constraints",
-        "Multimodal image support",
-        "Function calling and tool use",
-        "LoRA adapter configuration",
-        "KV cache management",
-        "Streaming support",
-        "Complete parameter coverage"
+        "Multimodal vision support (mmproj + image)",
+        "Speculative decoding (draft-mtp, eagle3, ngram)",
+        "KV cache type configuration",
+        "Code infill (Fill-in-the-Middle)",
+        "Text embeddings",
+        "Process monitoring and manual VRAM release",
+        "Automatic cleanup on ComfyUI shutdown"
     ],
-    "node_count": 1,
+    "node_count": 7,
     "category": "AI/LlamaCpp"
 }
