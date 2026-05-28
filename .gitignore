@@ -58,6 +58,9 @@ output/
 temp/
 input/
 
+# llama.cpp binaries
+llama-bin/
+
 # Local configuration
 config.local.json
 .env.local
