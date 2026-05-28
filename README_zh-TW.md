@@ -44,7 +44,7 @@ ComfyUI 節點  ──→  subprocess  ──→  llama.cpp 二進位  ──→
 
 ```bash
 cd ComfyUI/custom_nodes/
-git clone https://github.com/YOUR_USER/comfyui-llama-cli.git
+git clone https://github.com/zx90316/comfyui-llama-cli.git
 ```
 
 2. 建立模型目錄：
